@@ -1,1 +1,21 @@
+/* Author(s): Tom Zielinski,
+ *              Calvin May
+ * 
+ *   Date: 02/02/2021 | Last Modified: 02/03/2021
+ *   Document: Services.html
+ *   Description: ...
+*/
 /* Custom css page */
+#background{
+    width:100vw;
+    height:100vh;
+    background: url("../Pictures/Toronto.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x: hidden;
+    margin:0px;
+    min-height:100%;
+    background-color: gray;
+}
