@@ -6,7 +6,7 @@
  *   Description: ...
 */
 /* Custom css page */
-#background{
+body{
     width:100vw;
     height:100vh;
     background: url("../Pictures/Toronto.jpg") no-repeat center center fixed;

@@ -56,8 +56,8 @@
 
         let newParagraph = document.createElement("p");
         newParagraph.setAttribute("id", "paragraphOne");
-        newParagraph.textContent = "Paragraph One!";
-        newParagraph.className = "fs-6";
+        newParagraph.className = "fs-6 col col-md-4 mt-5 m-auto px-4 border border-dark border-4 rounded";
+        newParagraph.textContent = "Welcome to Cavlin May's and Tom Zielinski's Webd6201 Lab01 webpage.";
 
         mainContent.appendChild(newParagraph);
     }
@@ -65,6 +65,19 @@
     /** displayAboutPage() - Loads the Content for about.html */
     function displayAboutPage() {
 
+        
+        let About = document.getElementById("about-tom");
+        let pic = document.createElement("img");
+        pic.setAttribute("src", "../Pictures/Tom.jpeg");
+        pic.setAttribute("height", "100");
+        pic.setAttribute("width", "100");
+        pic.setAttribute("alt", "Headshot of Tom");
+        
+        let aboutTom = document.createElement("p");
+        aboutTom.innerHTML = `</br><p>Hello, My name is Tom Zielinski. I am a second year student at Durham College enrolled in the Computer Programming & Analysis program.</p>`;
+
+        About.appendChild(pic);
+        About.appendChild(aboutTom);
     }
 
     /** displayContactPage() - Loads the Content for contact.html */
@@ -101,7 +114,7 @@
         // Fix the "Products" Nav item
         let projectPageAnchor = document.getElementById("projects");    // Get the Nav item Anchor tag by id
         projectPageAnchor.setAttribute("href", "projects.html");        // Correctly set the Hypertext Reference attribute
-        projectPageAnchor.textContent = " Projects";                    // Correctly set the text to indicate a project page
+        projectPageAnchor.innerHTML = "<i class=\"fas fa-th fa-lg\"></i> Projects";                    // Correctly set the text to indicate a project page
         
         // Insert a Nav item for Human Resources
         let navBarItemList = document.getElementById("pageList");  // Get the <ul> holding the Page links
