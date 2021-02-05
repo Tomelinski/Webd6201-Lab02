@@ -16,7 +16,12 @@
      *          based on the title of the document.
     */
     function Start() {
-        console.log("Web App Started.");
+        console.log("Web App Started.");``
+
+        // Fix the "Products" Nav item
+        let projectPageAnchor = document.getElementById("projects");    // Get the Nav item Anchor tag by id
+        projectPageAnchor.setAttribute("href", "projects.html");        // Correctly set the Hypertext Reference attribute
+        projectPageAnchor.textContent = " Projects";                    // Correctly set the text to indicate a project page
 
         // A switch case used to figure out which page is being loaded.
         switch (document.title) {
