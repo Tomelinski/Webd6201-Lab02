@@ -86,7 +86,22 @@
         tomResume.setAttribute("class", "btn btn-primary");
         tomResume.textContent = "Resume";
         //-About Info
-        aboutTom.innerHTML = `<hr/><p>Hello, My name is Tom Zielinski. I am a second year student at Durham College enrolled in the Computer Programming & Analysis program.</p>`;
+        aboutTom.innerHTML = `<hr/><p>Hello, My name is Tom Zielinski.<br/><br/>
+I am a second year student at Durham College enrolled in the Computer Programming & Analysis program.
+I’m passionate about coding and learning how things work.
+I also have a strong understanding for the fundamentals of code which allows me to easily understand new concepts and languages.
+<br/>
+    Over the last year I learned C#/C++, PHP, MySQL, HTML/CSS, and .NET in depth. I also learned
+different software development methodologies such as Agile and Waterfall. Since I have always
+been interested in computer programming, I wanted to keep learning even after school was
+finished for the year. Over this year, I’ve been teaching myself JavaScript (JSON, React, NodeJS,
+Express and MongoDB) and Git/Github through creating multiple web-apps as side projects, as
+well as creating a personal website to sharpen my skills in HTML/CSS. For fun, I recreated the
+Snake game in C#, and I learned how to use Unity to create an Angry Birds replica in C#
+<br/>
+If this interests you please visit my LinkedIn <a class="nav-link" href="https://www.linkedin.com/in/tom-zielinski-904262201/">LinkedIn</a>
+If you want to look at some of my Projects feel free to look at my GitHub<a class="nav-link" href="https://github.com/Tomelinski?tab=repositories">GitHub</a>
+</p>`;
         
         // Insert the Elements within the about-tom div
         aboutTomDiv.appendChild(pic);
@@ -141,7 +156,10 @@
 
     /** displayContactPage() - Loads the Content for contact.html */
     function displayContactPage() {
-
+        let sendButton = document.getElementById("sendButton");
+        sendButton.addEventListener("click", (event) => {
+            window.location = "../index.html";
+        });
     }
 
     /** displayProjectsPage() - Loads the Content for projects.html */
@@ -151,7 +169,19 @@
 
     /** displayServicesPage() - Loads the Content for services.html */
     function displayServicesPage() {
+        let newParagraph = document.createElement("p");
+        newParagraph.setAttribute("id", "services");
+        let newHeader = document.createElement("h1");
+        newHeader.className = "col col-md-4 mt-5 m-auto";
+        newHeader.textContent = "Our Skills"
+        newParagraph.className = "fs-6 col col-md-4 mt-5 m-auto px-4 border border-dark border-4 about-background";
+        newParagraph.innerHTML = `We create Custom Webpages for our Clients<br/>
+        We can create custom interactive .NET windows forms for our clients<br/>
 
+        `;
+
+        mainContent.appendChild(newHeader);
+        mainContent.appendChild(newParagraph);
     }
 
     /** displayHumanResourcesPage() - Loads the Content for human_resources.html */
