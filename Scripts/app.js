@@ -79,7 +79,7 @@
         //-Name Heading
         tomHeading.textContent = "Tom Zielinski"; 
         //-Portrait
-        pic.setAttribute("src", "../Pictures/Tom.jpeg");
+        pic.setAttribute("src", "Pictures/Tom.jpeg");
         pic.setAttribute("class", "headshot-portrait");
         pic.setAttribute("alt", "Headshot of Tom");   
         //-Resume
@@ -178,7 +178,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         //-Name Heading
         projectOneHeading.textContent = "Snake Game Project"; 
         //-Portrait
-        picOne.setAttribute("src", "Pictures/Snake.PNG");
+        picOne.setAttribute("src", "Pictures/Snake.png");
         picOne.setAttribute("class", "projectOnePic");
         picOne.setAttribute("alt", "Snake project");   
 
