@@ -201,7 +201,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         //-Name Heading
         projectTwoHeading.textContent = "Trip Logger Website"; 
         //-Portrait
-        picTwo.setAttribute("src", "./Pictures/TripLogger.JPG");
+        picTwo.setAttribute("src", "Pictures/TripLogger.JPG");
         picTwo.setAttribute("class", "projectTwoPic");
         picTwo.setAttribute("alt", "A screenshot of the Trip Logger website");   
 
