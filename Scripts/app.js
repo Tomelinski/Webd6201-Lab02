@@ -178,7 +178,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         //-Name Heading
         projectOneHeading.textContent = "Snake Game Project"; 
         //-Portrait
-        picOne.setAttribute("src", "Pictures/Snake.png");
+        picOne.setAttribute("src", "Pictures/Snake.PNG");
         picOne.setAttribute("class", "projectOnePic");
         picOne.setAttribute("alt", "Snake project");   
 
@@ -225,7 +225,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         //-Name Heading
         projectThreeHeading.textContent = "Angry birds replica Game Project"; 
         //-Portrait
-        picThree.setAttribute("src", "Pictures/MadBirds.jpg");
+        picThree.setAttribute("src", "Pictures/MadBirds.JPG");
         picThree.setAttribute("class", "projectThreePic");
         picThree.setAttribute("alt", "Screenshot of the Mad Birds game.");   
 
