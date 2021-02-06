@@ -161,7 +161,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         let sendButton = document.getElementById("sendButton");
         sendButton.addEventListener("click", (event) => {
             event.preventDefault();
-            window.location = "../index.html";
+            window.location = "index.html";
         });
     }
 
