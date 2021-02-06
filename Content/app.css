@@ -34,3 +34,17 @@ body{
     border-radius: 5%;
 
 }
+
+.projectOnePic, .projectThreePic{
+    height: 200px;
+    float: left;
+}
+
+.projectTwoPic{
+    height: 200px;
+    float: Right;
+}
+
+#project1, #project2, #project3{
+    height: 200px;
+}

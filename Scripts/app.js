@@ -1,4 +1,4 @@
-/** Author(s): Tom Zielinski,
+/** Author(s): Tom Zielinski 100559389,
  *             Calvin May
  * 
  *  Date: 02/02/2021 | Last Modified: 02/03/2021
@@ -53,13 +53,13 @@
     /** Display Page Content Functions */
     /** displayHomePage() - Loads the Content for index.html */
     function displayHomePage() {
+        //create welcome paragraph in home page
+        let welcomeMessage = document.createElement("p");
+        welcomeMessage.setAttribute("id", "paragraphOne");
+        welcomeMessage.className = "fs-6 col col-md-4 mt-5 m-auto px-4 border border-dark border-4 rounded";
+        welcomeMessage.textContent = "Welcome to Cavlin May's and Tom Zielinski's Webd6201 Lab01 webpage.";
 
-        let newParagraph = document.createElement("p");
-        newParagraph.setAttribute("id", "paragraphOne");
-        newParagraph.className = "fs-6 col col-md-4 mt-5 m-auto px-4 border border-dark border-4 rounded";
-        newParagraph.textContent = "Welcome to Cavlin May's and Tom Zielinski's Webd6201 Lab01 webpage.";
-
-        mainContent.appendChild(newParagraph);
+        mainContent.appendChild(welcomeMessage);
     }
 
     /** displayAboutPage() - Loads the Content for about.html */
@@ -164,24 +164,94 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
 
     /** displayProjectsPage() - Loads the Content for projects.html */
     function displayProjectsPage() {
+        // About project one
+        //-Create Elements for About project one
+        let projectOne = document.getElementById("project1");
+        let projectOneHeading = document.createElement("h2");
+        let picOne = document.createElement("img");
+        let aboutProjectOne = document.createElement("p");
+        
+        // Set the Attributes, html, and Content for project 1 Elements
+        //-Name Heading
+        projectOneHeading.textContent = "Snake Game Project"; 
+        //-Portrait
+        picOne.setAttribute("src", "../Pictures/Snake.png");
+        picOne.setAttribute("class", "projectOnePic");
+        picOne.setAttribute("alt", "Snake project");   
 
+        //-About project Info
+        aboutProjectOne.innerHTML = `<p>this is project 1</p>`;
+        
+        // Insert the Elements within the project1 div
+        projectOne.appendChild(picOne);
+        projectOne.appendChild(projectOneHeading);
+        projectOne.appendChild(aboutProjectOne);
+
+        // About project Two -----------------------------------------------
+        //-Create Elements for About project Two
+        let projectTwo = document.getElementById("project2");
+        let projectTwoHeading = document.createElement("h2");
+        let picTwo = document.createElement("img");
+        let aboutProjectTwo = document.createElement("p");
+        
+        // Set the Attributes, html, and Content for project 1 Elements
+        //-Name Heading
+        projectTwoHeading.textContent = "Snake Game Project"; 
+        //-Portrait
+        picTwo.setAttribute("src", "../Pictures/TripLogger.jpg");
+        picTwo.setAttribute("class", "projectTwoPic");
+        picTwo.setAttribute("alt", "Snake project");   
+
+        //-About project Info
+        aboutProjectTwo.innerHTML = `<p>this is project 2</p>`;
+        
+        // Insert the Elements within the project1 div
+        projectTwo.appendChild(picTwo);
+        projectTwo.appendChild(projectTwoHeading);
+        projectTwo.appendChild(aboutProjectTwo);
+
+        // About project Three -----------------------------------------------
+        //-Create Elements for About project Three
+        let projectThree = document.getElementById("project3");
+        let projectThreeHeading = document.createElement("h2");
+        let picThree = document.createElement("img");
+        let aboutProjectThree = document.createElement("p");
+        
+        // Set the Attributes, html, and Content for project Three Elements
+        //-Name Heading
+        projectThreeHeading.textContent = "Angry birds replica Game Project"; 
+        //-Portrait
+        picThree.setAttribute("src", "../Pictures/MadBirds.jpg");
+        picThree.setAttribute("class", "projectThreePic");
+        picThree.setAttribute("alt", "Snake project");   
+
+        //-About project Info
+        aboutProjectThree.innerHTML = `<p>this is project 3</p>`;
+        
+        // Insert the Elements within the project3 div
+        projectThree.appendChild(picThree);
+        projectThree.appendChild(projectThreeHeading);
+        projectThree.appendChild(aboutProjectThree);
     }
 
     /** displayServicesPage() - Loads the Content for services.html */
     function displayServicesPage() {
-        let newParagraph = document.createElement("p");
-        newParagraph.setAttribute("id", "services");
+        //create header and paragraph for our services and skills
         let newHeader = document.createElement("h1");
+        let skillsParagraph = document.createElement("p");
+        //set attributes, class names and text
+        skillsParagraph.setAttribute("id", "services");
         newHeader.className = "col col-md-4 mt-5 m-auto";
         newHeader.textContent = "Our Skills"
-        newParagraph.className = "fs-6 col col-md-4 mt-5 m-auto px-4 border border-dark border-4 about-background";
-        newParagraph.innerHTML = `We create Custom Webpages for our Clients<br/>
+        skillsParagraph.className = "fs-6 col col-md-4 mt-5 m-auto px-4 border border-dark border-4 about-background";
+        skillsParagraph.innerHTML = `We create Custom Webpages for our Clients<br/>
         We can create custom interactive .NET windows forms for our clients<br/>
 
         `;
 
+        //display elements created about in in 'main'
         mainContent.appendChild(newHeader);
-        mainContent.appendChild(newParagraph);
+        mainContent.appendChild(skillsParagraph);
     }
 
     /** displayHumanResourcesPage() - Loads the Content for human_resources.html */
