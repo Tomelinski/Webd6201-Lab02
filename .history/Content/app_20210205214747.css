@@ -1,0 +1,67 @@
+/* Author(s): Tom Zielinski,
+ *              Calvin May
+ * 
+ *   Date: 02/02/2021 | Last Modified: 02/03/2021
+ *   Document: Services.html
+ *   Description: ...
+*/
+/* Custom css page */
+body{
+    width:100vw;
+    height:100vh;
+    background: url("../Pictures/Toronto.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x: hidden;
+    margin:0px;
+    min-height:100%;
+    background-color: gray;
+}
+
+.headshot-portrait{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    float: left;
+    shape-outside: circle();
+    margin: 10px 10px 15px 0px;
+}
+
+.about-background{
+    background: rgba(210, 210, 210, 0.3);
+    border-radius: 5%;
+
+}
+
+.projectOnePic, .projectThreePic{
+    height: 200px;
+    float: left;
+}
+
+.projectTwoPic{
+    height: 200px;
+    float: Right;
+}
+
+.serviceOnePic, .serviceThreePic{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    float: left;
+    margin: 10px;
+}
+
+.projectTwoPic{
+    height: 200px;
+    border-radius: 50%;
+    float: Right;
+}
+
+#project1, #project2, #project3{
+    height: 200px;
+}
+#service1, #service2, #service3{
+    height: 220px;
+}

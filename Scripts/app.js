@@ -1,9 +1,11 @@
 /** Author(s): Tom Zielinski 100559389,
- *             Calvin May
+ *             Calvin May 100745125
  * 
- *  Date: 02/02/2021 | Last Modified: 02/03/2021
+ *  Date: 02/02/2021 | Last Modified: 02/05/2021
  *  Document: app.js
- *  Description: ...
+ *  Description: This is the app.js file that is used to hold the JavaScript Logic throughout the website.
+ *               It is primarily used to inject javascript into webpages creating and updating html elements
+ *               (DOM Manipulation).
  */
 
 /** Custom JavaScript Page */
@@ -82,7 +84,7 @@
         pic.setAttribute("alt", "Headshot of Tom");   
         //-Resume
         tomResume.setAttribute("href", "../files/resumes/Tom_Resume.pdf");
-        tomResume.setAttribute("download", "");
+        tomResume.setAttribute("target", "_blank");
         tomResume.setAttribute("class", "btn btn-primary");
         tomResume.textContent = "Resume";
         //-About Info
@@ -123,10 +125,10 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         //-Portrait
         calvinPortrait.setAttribute("src", "../Pictures/Calvin.jpg");
         calvinPortrait.setAttribute("class", "headshot-portrait");
-        calvinPortrait.setAttribute("alt", "Headshot of Tom");
+        calvinPortrait.setAttribute("alt", "Headshot of Calvin");
         //-Resume
         calvinResume.setAttribute("href", "../files/resumes/Calvin_Resume.pdf");
-        calvinResume.setAttribute("download", "");
+        calvinResume.setAttribute("target", "_blank");
         calvinResume.setAttribute("class", "btn btn-primary");
         calvinResume.textContent = "Resume"; 
         //-About Info
@@ -134,11 +136,11 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         <p>Hi, my name's Calvin. <br/><br/>
         I'm a Coop Student at Durham College working towards an Advanced Diploma in
         Computer Programming & Analysis. If you've stumbled upon this website, you're
-        probably my professor, hey Tom! I hope grading isnt taking up too much of your
+        probably my professor, hey Tom! I hope grading isn't taking up too much of your
         time, see you in class! <br/>
         If your not my professor, that was a bit awkward. <br/>
         I'm an aspiring developer, like my friend Tom to your right, and have experience
-        in several programming languages like C#, C++, and PHP. But this website doesnt
+        in several programming languages like C#, C++, and PHP. But this website doesn't
         use PHP. The dynamic portions of this website are programmed using JavaScript
         and DOM Manipulation.
         <br/> <br/>
@@ -158,6 +160,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
     function displayContactPage() {
         let sendButton = document.getElementById("sendButton");
         sendButton.addEventListener("click", (event) => {
+            event.preventDefault();
             window.location = "../index.html";
         });
     }
@@ -180,7 +183,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         picOne.setAttribute("alt", "Snake project");   
 
         //-About project Info
-        aboutProjectOne.innerHTML = `<p>This is our poject of recreating the famous Snack game in C#. We utilized enum's and a variety of functions to make it function exactly like the real snake game</p>`;
+        aboutProjectOne.innerHTML = `<p>This is our project of recreating the famous Snack game in C#. We utilized enum's and a variety of functions to make it function exactly like the real snake game</p>`;
         
         // Insert the Elements within the project1 div
         projectOne.appendChild(picOne);
@@ -196,11 +199,11 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         
         // Set the Attributes, html, and Content for project 1 Elements
         //-Name Heading
-        projectTwoHeading.textContent = "Snake Game Project"; 
+        projectTwoHeading.textContent = "Trip Logger Website"; 
         //-Portrait
         picTwo.setAttribute("src", "../Pictures/TripLogger.jpg");
         picTwo.setAttribute("class", "projectTwoPic");
-        picTwo.setAttribute("alt", "Snake project");   
+        picTwo.setAttribute("alt", "A screenshot of the Trip Logger website");   
 
         //-About project Info
         aboutProjectTwo.innerHTML = `<p>This is Tom's Website, the Trip loggerUsers can login to their account and track where they've been in the world, and store their favourite memery and picture from that location.
@@ -224,10 +227,10 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         //-Portrait
         picThree.setAttribute("src", "../Pictures/MadBirds.jpg");
         picThree.setAttribute("class", "projectThreePic");
-        picThree.setAttribute("alt", "Snake project");   
+        picThree.setAttribute("alt", "Screenshot of the Mad Birds game.");   
 
         //-About project Info
-        aboutProjectThree.innerHTML = `<p>This is our Replica of Angery birds called MadBirds for copy write reasons. We Utilized Unity to create an environment that can recreate gravity and simulate the many features we required to make this possible</p>`;
+        aboutProjectThree.innerHTML = `<p>This is our Replica of Angry birds called MadBirds for copy write reasons. We Utilized Unity to create an environment that can recreate gravity and simulate the many features we required to make this possible</p>`;
         
         // Insert the Elements within the project3 div
         projectThree.appendChild(picThree);
@@ -237,18 +240,84 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
 
     /** displayServicesPage() - Loads the Content for services.html */
     function displayServicesPage() {
-        //create header and paragraph for our services and skills
-        let newHeader = document.createElement("h1");
-        let skillsParagraph = document.createElement("p");
-        //set attributes, class names and text
-        skillsParagraph.setAttribute("id", "services");
-        newHeader.className = "col col-md-4 mt-5 m-auto";
-        newHeader.textContent = "Our Skills"
-        skillsParagraph.className = "fs-6 col col-md-4 mt-5 m-auto px-4 border border-dark border-4 about-background";
-        skillsParagraph.innerHTML = `We create Custom Webpages for our Clients<br/>
-        We can create custom interactive .NET windows forms for our clients<br/>
 
-        `;
+        // About Service one
+        //-Create Elements for About Service one
+        let serviceOne = document.getElementById("service1");
+        let serviceOneHeading = document.createElement("h2");
+        let serviceOnePic = document.createElement("img");
+        let aboutServiceOne = document.createElement("p");
+        
+        // Set the Attributes, html, and Content for Service 1 Elements
+        //-Name Heading
+        serviceOneHeading.textContent = "Custom Web Pages"; 
+        //-Portrait
+        serviceOnePic.setAttribute("src", "../Pictures/service_webdev.jpg");
+        serviceOnePic.setAttribute("class", "serviceOnePic");
+        serviceOnePic.setAttribute("alt", "A laptop with html code.");   
+
+        //-About Service Info
+        aboutServiceOne.innerHTML = `<hr/><p>Tom and Calvin have extensive experience creating reliable, secure, and responsive websites. 
+                                             With experience in several languages such as JavaScript, PHP, C#, HTMl, and CSS you can trust us
+                                             to develop the modern website that you desire.
+                                          </p>`;
+        
+        // Insert the Elements within the Service1 div
+        serviceOne.appendChild(serviceOnePic);
+        serviceOne.appendChild(serviceOneHeading);
+        serviceOne.appendChild(aboutServiceOne);
+
+        // About Service Two---------------------------------------
+        //-Create Elements for About Service one
+        let serviceTwo = document.getElementById("service2");
+        let serviceTwoHeading = document.createElement("h2");
+        let serviceTwoPic = document.createElement("img");
+        let aboutServiceTwo = document.createElement("p");
+        
+        // Set the Attributes, html, and Content for Service 2 Elements
+        //-Name Heading
+        serviceTwoHeading.textContent = "Interactive .NET Applications"; 
+        //-Portrait
+        serviceTwoPic.setAttribute("src", "../Pictures/service_dotnet.png");
+        serviceTwoPic.setAttribute("class", "serviceTwoPic");
+        serviceTwoPic.setAttribute("alt", "Dot Net Logo");   
+
+        //-About Service Info
+        aboutServiceTwo.innerHTML = `<hr/><p>Tom and Calvin have utilized the .NET and .NET Core frameworks to deploy interactive Windows Forms
+                                             and Web Applications. Some of these projects have been hosted on the Azure Cloud Service and follow
+                                             the Model-View-Controller design pattern. 
+                                          </p>`;
+        
+        // Insert the Elements within the Service2 div
+        serviceTwo.appendChild(serviceTwoPic);
+        serviceTwo.appendChild(serviceTwoHeading);
+        serviceTwo.appendChild(aboutServiceTwo);
+
+        // About Service Three------------------------------------
+        //-Create Elements for About Service one
+        let serviceThree = document.getElementById("service3");
+        let serviceThreeHeading = document.createElement("h2");
+        let serviceThreePic = document.createElement("img");
+        let aboutServiceThree = document.createElement("p");
+        
+        // Set the Attributes, html, and Content for Service 3 Elements
+        //-Name Heading
+        serviceThreeHeading.textContent = "Basic Game Development"; 
+        //-Portrait
+        serviceThreePic.setAttribute("src", "../Pictures/service_game.jpg");
+        serviceThreePic.setAttribute("class", "serviceThreePic");
+        serviceThreePic.setAttribute("alt", "A picture of playing dice.");   
+
+        //-About project Info
+        aboutServiceThree.innerHTML = `<hr/><p>Both Tom and Calvin have been able to apply strong problem-solving, programming, and design skills to
+                                               create basic interactive games such as, Snake game and Angry Bird clones as well as basic Text RPG's
+                                               and Platformers.                                
+        </p>`;
+        
+        // Insert the Elements within the Service3 div
+        serviceThree.appendChild(serviceThreePic);
+        serviceThree.appendChild(serviceThreeHeading);
+        serviceThree.appendChild(aboutServiceThree);
 
         //display elements created about in in 'main'
         mainContent.appendChild(newHeader);

@@ -1,9 +1,8 @@
-/* Author(s): Tom Zielinski,
- *              Calvin May
+/* Author(s): Tom Zielinski 100559389,
+ *             Calvin May 100745125
  * 
- *   Date: 02/02/2021 | Last Modified: 02/03/2021
- *   Document: Services.html
- *   Description: ...
+ *   Date: 02/02/2021 | Last Modified: 02/05/2021
+ *   Document: app.css
 */
 /* Custom css page */
 body{
@@ -30,21 +29,41 @@ body{
 }
 
 .about-background{
-    background: rgba(210, 210, 210, 0.3);
-    border-radius: 5%;
+    background: rgba(210, 210, 210, 0.3); 
 
 }
 
 .projectOnePic, .projectThreePic{
     height: 200px;
     float: left;
+
 }
 
 .projectTwoPic{
     height: 200px;
     float: Right;
+
+}
+
+.serviceOnePic, .serviceThreePic{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    float: left;
+    margin: 10px;
+}
+
+.serviceTwoPic{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    float: Right;
+    margin: 10px;
 }
 
 #project1, #project2, #project3{
     height: 200px;
+}
+#service1, #service2, #service3{
+    height: 220px;
 }
