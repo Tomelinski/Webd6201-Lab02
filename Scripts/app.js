@@ -180,7 +180,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         picOne.setAttribute("alt", "Snake project");   
 
         //-About project Info
-        aboutProjectOne.innerHTML = `<p>this is project 1</p>`;
+        aboutProjectOne.innerHTML = `<p>This is our poject of recreating the famous Snack game in C#. We utilized enum's and a variety of functions to make it function exactly like the real snake game</p>`;
         
         // Insert the Elements within the project1 div
         projectOne.appendChild(picOne);
@@ -203,7 +203,8 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         picTwo.setAttribute("alt", "Snake project");   
 
         //-About project Info
-        aboutProjectTwo.innerHTML = `<p>this is project 2</p>`;
+        aboutProjectTwo.innerHTML = `<p>This is Tom's Website, the Trip loggerUsers can login to their account and track where they've been in the world, and store their favourite memery and picture from that location.
+        This web app was built with a React front-end, Node/Express back-end and a MongoDB database. This app utilizes the Google Maps Embed and Google Geolocation APIs, and features a REST API in the back-end.</p>`;
         
         // Insert the Elements within the project1 div
         projectTwo.appendChild(picTwo);
@@ -226,7 +227,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         picThree.setAttribute("alt", "Snake project");   
 
         //-About project Info
-        aboutProjectThree.innerHTML = `<p>this is project 3</p>`;
+        aboutProjectThree.innerHTML = `<p>This is our Replica of Angery birds called MadBirds for copy write reasons. We Utilized Unity to create an environment that can recreate gravity and simulate the many features we required to make this possible</p>`;
         
         // Insert the Elements within the project3 div
         projectThree.appendChild(picThree);
