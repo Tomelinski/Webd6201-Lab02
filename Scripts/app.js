@@ -83,7 +83,7 @@
         pic.setAttribute("class", "headshot-portrait");
         pic.setAttribute("alt", "Headshot of Tom");   
         //-Resume
-        tomResume.setAttribute("href", "../files/resumes/Tom_Resume.pdf");
+        tomResume.setAttribute("href", "files/resumes/Tom_Resume.pdf");
         tomResume.setAttribute("target", "_blank");
         tomResume.setAttribute("class", "btn btn-primary");
         tomResume.textContent = "Resume";
@@ -123,11 +123,11 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         //-Name Heading
         calvinHeading.textContent = "Calvin May";
         //-Portrait
-        calvinPortrait.setAttribute("src", "../Pictures/Calvin.jpg");
+        calvinPortrait.setAttribute("src", "Pictures/Calvin.jpg");
         calvinPortrait.setAttribute("class", "headshot-portrait");
         calvinPortrait.setAttribute("alt", "Headshot of Calvin");
         //-Resume
-        calvinResume.setAttribute("href", "../files/resumes/Calvin_Resume.pdf");
+        calvinResume.setAttribute("href", "files/resumes/Calvin_Resume.pdf");
         calvinResume.setAttribute("target", "_blank");
         calvinResume.setAttribute("class", "btn btn-primary");
         calvinResume.textContent = "Resume"; 
@@ -178,7 +178,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         //-Name Heading
         projectOneHeading.textContent = "Snake Game Project"; 
         //-Portrait
-        picOne.setAttribute("src", "../Pictures/Snake.png");
+        picOne.setAttribute("src", "Pictures/Snake.png");
         picOne.setAttribute("class", "projectOnePic");
         picOne.setAttribute("alt", "Snake project");   
 
@@ -225,7 +225,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         //-Name Heading
         projectThreeHeading.textContent = "Angry birds replica Game Project"; 
         //-Portrait
-        picThree.setAttribute("src", "../Pictures/MadBirds.jpg");
+        picThree.setAttribute("src", "Pictures/MadBirds.jpg");
         picThree.setAttribute("class", "projectThreePic");
         picThree.setAttribute("alt", "Screenshot of the Mad Birds game.");   
 
@@ -252,7 +252,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         //-Name Heading
         serviceOneHeading.textContent = "Custom Web Pages"; 
         //-Portrait
-        serviceOnePic.setAttribute("src", "../Pictures/service_webdev.jpg");
+        serviceOnePic.setAttribute("src", "Pictures/service_webdev.jpg");
         serviceOnePic.setAttribute("class", "serviceOnePic");
         serviceOnePic.setAttribute("alt", "A laptop with html code.");   
 
@@ -278,7 +278,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         //-Name Heading
         serviceTwoHeading.textContent = "Interactive .NET Applications"; 
         //-Portrait
-        serviceTwoPic.setAttribute("src", "../Pictures/service_dotnet.png");
+        serviceTwoPic.setAttribute("src", "Pictures/service_dotnet.png");
         serviceTwoPic.setAttribute("class", "serviceTwoPic");
         serviceTwoPic.setAttribute("alt", "Dot Net Logo");   
 
@@ -304,7 +304,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         //-Name Heading
         serviceThreeHeading.textContent = "Basic Game Development"; 
         //-Portrait
-        serviceThreePic.setAttribute("src", "../Pictures/service_game.jpg");
+        serviceThreePic.setAttribute("src", "Pictures/service_game.jpg");
         serviceThreePic.setAttribute("class", "serviceThreePic");
         serviceThreePic.setAttribute("alt", "A picture of playing dice.");   
 
