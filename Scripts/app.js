@@ -65,19 +65,78 @@
     /** displayAboutPage() - Loads the Content for about.html */
     function displayAboutPage() {
 
-        
-        let About = document.getElementById("about-tom");
+        // About Tom Content
+        //-Create Elements for About Tom
+        let aboutTomDiv = document.getElementById("about-tom");
+        let tomHeading = document.createElement("h2");
         let pic = document.createElement("img");
-        pic.setAttribute("src", "../Pictures/Tom.jpeg");
-        pic.setAttribute("height", "100");
-        pic.setAttribute("width", "100");
-        pic.setAttribute("alt", "Headshot of Tom");
-        
         let aboutTom = document.createElement("p");
-        aboutTom.innerHTML = `</br><p>Hello, My name is Tom Zielinski. I am a second year student at Durham College enrolled in the Computer Programming & Analysis program.</p>`;
+        let tomResume = document.createElement("a");
+        
+        // Set the Attributes, html, and Content for Toms Elements
+        //-Name Heading
+        tomHeading.textContent = "Tom Zielinski"; 
+        //-Portrait
+        pic.setAttribute("src", "../Pictures/Tom.jpeg");
+        pic.setAttribute("class", "headshot-portrait");
+        pic.setAttribute("alt", "Headshot of Tom");   
+        //-Resume
+        tomResume.setAttribute("href", "../files/resumes/Tom_Resume.pdf");
+        tomResume.setAttribute("download", "");
+        tomResume.setAttribute("class", "btn btn-primary");
+        tomResume.textContent = "Resume";
+        //-About Info
+        aboutTom.innerHTML = `<hr/><p>Hello, My name is Tom Zielinski. I am a second year student at Durham College enrolled in the Computer Programming & Analysis program.</p>`;
+        
+        // Insert the Elements within the about-tom div
+        aboutTomDiv.appendChild(pic);
+        aboutTomDiv.appendChild(tomHeading);
+        aboutTomDiv.appendChild(tomResume);
+        aboutTomDiv.appendChild(aboutTom);
+        
+        // About Calvin Content
+        //-Create Elements for About Calvin
+        let aboutCalvinDiv = document.getElementById("about-calvin");
+        let calvinHeading = document.createElement("h2");
+        let calvinPortrait = document.createElement("img");
+        let aboutCalvin = document.createElement("p");
+        let calvinResume = document.createElement("a");
 
-        About.appendChild(pic);
-        About.appendChild(aboutTom);
+        // Set the Attributes, html, and Content for Toms Elements
+        //-Name Heading
+        calvinHeading.textContent = "Calvin May";
+        //-Portrait
+        calvinPortrait.setAttribute("src", "../Pictures/Calvin.jpg");
+        calvinPortrait.setAttribute("class", "headshot-portrait");
+        calvinPortrait.setAttribute("alt", "Headshot of Tom");
+        //-Resume
+        calvinResume.setAttribute("href", "../files/resumes/Calvin_Resume.pdf");
+        calvinResume.setAttribute("download", "");
+        calvinResume.setAttribute("class", "btn btn-primary");
+        calvinResume.textContent = "Resume"; 
+        //-About Info
+        aboutCalvin.innerHTML = `<hr/>
+        <p>Hi, my name's Calvin. <br/><br/>
+        I'm a Coop Student at Durham College working towards an Advanced Diploma in
+        Computer Programming & Analysis. If you've stumbled upon this website, you're
+        probably my professor, hey Tom! I hope grading isnt taking up too much of your
+        time, see you in class! <br/>
+        If your not my professor, that was a bit awkward. <br/>
+        I'm an aspiring developer, like my friend Tom to your right, and have experience
+        in several programming languages like C#, C++, and PHP. But this website doesnt
+        use PHP. The dynamic portions of this website are programmed using JavaScript
+        and DOM Manipulation.
+        <br/> <br/>
+        If you want to get to know me a bit more, click the resume button by my name or
+        take a look at my linkedIn Account. <br/>
+        <a class="nav-link" href="https://www.linkedin.com/in/calvin-may-384798200/">My LinkedIn</a>
+        </p>`;       
+        
+        // Insert the Elements within the about-tom div
+        aboutCalvinDiv.appendChild(calvinPortrait);
+        aboutCalvinDiv.appendChild(calvinHeading);
+        aboutCalvinDiv.appendChild(calvinResume);
+        aboutCalvinDiv.appendChild(aboutCalvin);
     }
 
     /** displayContactPage() - Loads the Content for contact.html */
@@ -114,7 +173,7 @@
         // Fix the "Products" Nav item
         let projectPageAnchor = document.getElementById("projects");    // Get the Nav item Anchor tag by id
         projectPageAnchor.setAttribute("href", "projects.html");        // Correctly set the Hypertext Reference attribute
-        projectPageAnchor.innerHTML = "<i class=\"fas fa-th fa-lg\"></i> Projects";                    // Correctly set the text to indicate a project page
+        projectPageAnchor.innerHTML = "<i class=\"fas fa-th fa-lg\"></i> Projects"; // Correctly set the text to indicate a project page
         
         // Insert a Nav item for Human Resources
         let navBarItemList = document.getElementById("pageList");  // Get the <ul> holding the Page links

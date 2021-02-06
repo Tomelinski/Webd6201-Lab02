@@ -19,3 +19,18 @@ body{
     min-height:100%;
     background-color: gray;
 }
+
+.headshot-portrait{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    float: left;
+    shape-outside: circle();
+    margin: 10px 10px 15px 0px;
+}
+
+.about-background{
+    background: rgba(210, 210, 210, 0.3);
+    border-radius: 5%;
+
+}
