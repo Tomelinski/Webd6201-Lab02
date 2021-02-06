@@ -318,10 +318,6 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         serviceThree.appendChild(serviceThreePic);
         serviceThree.appendChild(serviceThreeHeading);
         serviceThree.appendChild(aboutServiceThree);
-
-        //display elements created about in in 'main'
-        mainContent.appendChild(newHeader);
-        mainContent.appendChild(skillsParagraph);
     }
 
     /** displayHumanResourcesPage() - Loads the Content for human_resources.html */
