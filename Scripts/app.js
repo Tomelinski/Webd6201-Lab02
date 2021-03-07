@@ -1,7 +1,7 @@
 /** Author(s): Tom Zielinski 100559389,
  *             Calvin May 100745125
  * 
- *  Date: 02/02/2021 | Last Modified: 02/05/2021
+ *  Date: 02/02/2021 | Last Modified: 03/07/2021
  *  Document: app.js
  *  Description: This is the app.js file that is used to hold the JavaScript Logic throughout the website.
  *               It is primarily used to inject javascript into webpages creating and updating html elements
@@ -47,7 +47,14 @@
                 break;
             case "Human Resources":
                 displayHumanResourcesPage();
+                break;   
+            case "Login":
+                displayHumanResourcesPage();
                 break;    
+            case "Register":
+                displayHumanResourcesPage();
+                break;    
+                 
         }
        
     }
