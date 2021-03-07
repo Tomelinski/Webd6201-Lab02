@@ -1,8 +1,8 @@
 {
-  "name": "Lab1",
+  "name": "Lab2",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/Tomelinski/Webd6201-Lab01.git",
+  "repository": "https://github.com/Tomelinski/Webd6201-Lab02.git",
   "author": "Tomelinski <tomzielinski@live.ca>",
   "license": "MIT",
   "dependencies": {
