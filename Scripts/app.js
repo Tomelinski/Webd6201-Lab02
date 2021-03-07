@@ -10,6 +10,65 @@
 
 /** Custom JavaScript Page */
 
+/** User Class */
+class User {
+    //getters and setters
+    get FirstName() {
+      return this.m_firstName;
+    }
+    set FirstName(value) {
+      this.m_firstName = value;
+    }
+    get LastName() {
+      return this.m_lastName;
+    }
+    set LastName(value) {
+      this.m_lastName = value;
+    }
+    get Username() {
+      return this.m_username;
+    }
+    set Username(value) {
+      this.m_username = value;
+    }
+    get EmailAddress() {
+      return this.m_emailAddress;
+    }
+    set EmailAddress(value) {
+      this.m_emailAddress = value;
+    }
+    get Password() {
+      return this.m_password;
+    }
+    set Password(value) {
+      this.m_password = value;
+    }
+    
+    /**
+     * 
+     * @param {*} firstName 
+     * @param {*} lastName 
+     * @param {*} username 
+     * @param {*} emailAddress 
+     * @param {*} password 
+     */
+    constructor(firstName ="", lastName ="", username="", emailAddress="", password="") {
+      this.m_firstName= firstName;
+      this.m_lastName= lastName;
+      this.m_username = username;
+      this.m_emailAddress = emailAddress;
+      this.m_password = password;
+    }
+
+    toString() {
+        return `First Name: ${this.FirstName} 
+    Last Name: ${this.LastName} 
+    Username: ${this.Username}
+    Email Address: ${this.EmailAddress}`;
+      }
+  
+  }
+
 /** IFFE Function */
 (() => {
 
@@ -25,7 +84,7 @@
      *          based on the title of the document.
     */
     function Start() {
-        console.log("Web App Started.");``
+        console.log("Web App Started.");
 
 
         // A switch case used to figure out which page is being loaded.
@@ -49,10 +108,10 @@
                 displayHumanResourcesPage();
                 break;   
             case "Login":
-                displayHumanResourcesPage();
+                displayLogin();
                 break;    
             case "Register":
-                displayHumanResourcesPage();
+                displayRegister();
                 break;    
                  
         }
@@ -330,6 +389,51 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
     /** displayHumanResourcesPage() - Loads the Content for human_resources.html */
     function displayHumanResourcesPage() {
         
+
+    }
+
+    function displayLogin(){
+        let navBarItemList = document.getElementById("pageList");  // Get the <ul> holding the Page links
+        let loginDiv = document.getElementById("theLoginForm");
+        let usernameListItem = document.createElement("li"); // Create a new list Item
+
+        let errorMessage = document.createElement("div");
+        errorMessage.setAttribute("id", "errorMEssage");
+        
+        
+        $("#loginButton").on("click", function(){
+            event.preventDefault();
+            let username = $("#username");
+            let password = $("#password");
+            
+            if(username.val() != "" && password.val() != ""){
+                console.log(username.val() + " " + password.val());
+                errorMessage.textContent = null;
+                errorMessage.className = null;
+
+                usernameListItem.setAttribute("class", "nav-item");  // Set the class of the list item to "nav-item"
+                // Create the anchor that will exist within the humanResourcesListItem
+                let usernameData = `<a class="nav-link" aria-current="page" href="#">${username.val()}</a>`;
+                // Set the innerHtml with the data above
+                usernameListItem.innerHTML = usernameData;
+                // Insert the new listitem before the 8th child within the <ul>
+                //-(8th because it counts both the <li> elements and the <a> elements within)
+                navBarItemList.insertBefore(usernameListItem, navBarItemList.childNodes[11]);
+            }
+            else
+            {
+                errorMessage.className = "alert alert-danger";
+                username.trigger("focus").trigger("select");
+                errorMessage.textContent = "Invalid Login - Usename/password must not be empty";
+            }
+
+            //insert error message before the 2nd node - the form
+            loginDiv.insertBefore(errorMessage, loginDiv.childNodes[2]);
+
+        });
+    }
+
+    function displayRegister(){
 
     }
 
