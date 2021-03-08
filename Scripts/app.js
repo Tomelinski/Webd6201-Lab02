@@ -59,8 +59,13 @@ class User {
       this.m_emailAddress = emailAddress;
       this.m_password = password;
     }
-
-    toString() {
+/**
+ *  toString() - return a formated string to be displayed
+ *
+ * @return {string} 
+ * @memberof User
+ */
+toString() {
         return `First Name: ${this.FirstName} 
 Last Name: ${this.LastName} 
 Username: ${this.Username}
@@ -397,19 +402,19 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         let loginDiv = document.getElementById("theLoginForm");
         let usernameListItem = document.createElement("li"); // Create a new list Item
 
+        // Create the Div ErrorMessage Elements
         let errorMessage = document.createElement("div");
         errorMessage.setAttribute("id", "errorMEssage");
         
         
         $("#loginButton").on("click", function(event){
             event.preventDefault();
-            //$(this).preventDefault();
             let username = $("#username");
             let password = $("#password");
-            let loginAnchor = $("#loginListItem");
+            
             
             if(username.val() != "" && password.val() != ""){
-                console.log(username.val() + " " + password.val());
+                //reset error message to not show
                 errorMessage.textContent = null;
                 errorMessage.className = null;
 
@@ -428,6 +433,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
             }
             else
             {
+                //display error message
                 errorMessage.className = "alert alert-danger";
                 username.trigger("focus").trigger("select");
                 errorMessage.textContent = "Invalid Login - Username/password must not be empty";
