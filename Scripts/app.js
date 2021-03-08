@@ -62,10 +62,10 @@ class User {
 
     toString() {
         return `First Name: ${this.FirstName} 
-    Last Name: ${this.LastName} 
-    Username: ${this.Username}
-    Email Address: ${this.EmailAddress}`;
-      }
+Last Name: ${this.LastName} 
+Username: ${this.Username}
+Email Address: ${this.EmailAddress}`;
+    }
   
   }
 
@@ -401,10 +401,12 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         errorMessage.setAttribute("id", "errorMEssage");
         
         
-        $("#loginButton").on("click", function(){
+        $("#loginButton").on("click", function(event){
             event.preventDefault();
+            //$(this).preventDefault();
             let username = $("#username");
             let password = $("#password");
+            let loginAnchor = $("#loginListItem");
             
             if(username.val() != "" && password.val() != ""){
                 console.log(username.val() + " " + password.val());
@@ -413,9 +415,13 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
 
                 usernameListItem.setAttribute("class", "nav-item");  // Set the class of the list item to "nav-item"
                 // Create the anchor that will exist within the humanResourcesListItem
-                let usernameData = `<a class="nav-link" aria-current="page" href="#">${username.val()}</a>`;
+                //let usernameData = `<a class="nav-link" aria-current="page" href="#"><i class="fas fa-user-circle fa-lg"></i> ${username.val()}</a>`;
+                let usernameData = `<div class="navbar-text"><i class="fas fa-user-circle fa-lg"></i> ${username.val()}</div>`;
+                let loginAnchorData = `<a class="nav-link" aria-current="page" href="#"><i class="fas fa-sign-out-alt fa-lg"></i> Logout</a>`
                 // Set the innerHtml with the data above
                 usernameListItem.innerHTML = usernameData;
+
+                $("#loginListItem").html(loginAnchorData);
                 // Insert the new listitem before the 8th child within the <ul>
                 //-(8th because it counts both the <li> elements and the <a> elements within)
                 navBarItemList.insertBefore(usernameListItem, navBarItemList.childNodes[11]);
@@ -424,7 +430,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
             {
                 errorMessage.className = "alert alert-danger";
                 username.trigger("focus").trigger("select");
-                errorMessage.textContent = "Invalid Login - Usename/password must not be empty";
+                errorMessage.textContent = "Invalid Login - Username/password must not be empty";
             }
 
             //insert error message before the 2nd node - the form
@@ -433,7 +439,122 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         });
     }
 
-    function displayRegister(){
+
+    // For validation Methods
+    function textEmailAddressValidation()
+    {
+      let errorMessage = $("#errorMessage").hide();
+  
+      let emailAddressPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  
+      $("#emailAddress").on("blur", function(){
+  
+        if (!emailAddressPattern.test($(this).val())) {
+          $(this).trigger("focus").trigger("select");
+
+          errorMessage.show().addClass("alert alert-danger").text("Please enter a valid email address");
+        } else {
+          errorMessage.removeAttr("class").hide();
+        }
+      });
+    }
+
+    function textNameValidation()
+    {
+      let errorMessage = $("#errorMessage").hide();
+      let nameMinChars = 2;
+
+      $("#firstName").on("blur", function(){
+        if ($(this).val().length < nameMinChars) {
+          $(this).trigger("focus").trigger("select");
+
+          errorMessage.show().addClass("alert alert-danger").text("Please Enter a valid First Name, must be greater than 2 Characters");
+        } else {
+          errorMessage.removeAttr("class").hide();
+        }
+      });
+
+      $("#lastName").on("blur", function(){
+        if ($(this).val().length < nameMinChars) {
+          $(this).trigger("focus").trigger("select");
+
+          errorMessage.show().addClass("alert alert-danger").text("Please Enter a valid Last Name, must be greater than 2 Characters");
+        } else {
+          errorMessage.removeAttr("class").hide();
+        }
+      });
+
+
+    }
+
+    function textPasswordValidation()
+    {
+      let errorMessage = $("#errorMessage").hide();
+      let passwordMinChars = 6;
+
+      $("#password").on("blur", function(){
+        if ($(this).val().length < passwordMinChars) {
+          $(this).trigger("focus").trigger("select");
+
+          errorMessage.show().addClass("alert alert-danger").text("Please enter a valid Password. Must be Greater than 6 Characters.");
+        
+        } else if ($("#confirmPassword").val() !== "" && $(this).val() !== $("#passwordConfirm").val()) {
+          errorMessage.show().addClass("alert alert-danger").text("Confirm Password doesnt match password.");
+        
+        } else {
+          errorMessage.removeAttr("class").hide();
+        }
+      });
+
+
+      $("#confirmPassword").on("blur", function(){
+        if ($(this).val() !== $("#password").val()) {
+          //$(this).trigger("focus").trigger("select");
+
+          errorMessage.show().addClass("alert alert-danger").text("Confirm Password doesnt match password.");
+        } else {
+          errorMessage.removeAttr("class").hide();
+        }
+      });
+
+    }
+
+    function formValidator()
+    {
+      textEmailAddressValidation();
+      textNameValidation();
+      textPasswordValidation();
+    }
+
+
+
+
+    
+    function displayRegister()
+    {
+      // Create the Div ErrorMessage Elements
+      let errorMessage = document.createElement("div");
+      errorMessage.setAttribute("id", "errorMessage");
+      // Create a reference to the register form
+      let registerForm = document.getElementById("registerForm");
+
+      //insert error message before the 2nd node - the form
+      registerForm.insertBefore(errorMessage, registerForm.childNodes[2]);
+
+      formValidator();
+
+      $("#registerButton").on("click", function(event){
+        event.preventDefault();
+
+        let newUser = new User($("#firstName").val(), $("#lastName").val(), $("#firstName").val() + " " + $("#lastName").val(), $("#emailAddress").val(), $("#password").val());
+
+        console.log(newUser.toString());
+
+        registerForm.reset();
+
+      });
+      
+
 
     }
 

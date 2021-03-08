@@ -1,17 +1,16 @@
 <!-- Author(s): Tom Zielinski 100559389,
  *             Calvin May 100745125
  * 
- *   Date: 02/04/2021 | Last Modified: 02/05/2021
- *   Document: human_resources.html
- *   Description: This page was used to demonstrate a JavaScript injection into the NavBar of the 
- *                website.
+ *   Date: 02/02/2021 | Last Modified: 02/05/2021
+ *   Document: about.html
+ *   Description: This page holds information on the authors of the website (Calvin & Tom).
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Human Resources</title>
+    <title>About</title>
     <!-- -->
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
@@ -59,12 +58,22 @@
       </header>
 
       <main>
-          
+        <div class="container"></div>
+          <div class="row justify-content-around">
+            <div id="about-calvin" class="col-4 mt-5 about-background">
+              
+            </div>
+            <div id="about-tom" class="col-4 mt-5 about-background">
+              
+            </div>
+          </div>
+        </div>
       </main>
     
     <!-- Script section -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="./Scripts/app.js"></script>
 </body>
 
