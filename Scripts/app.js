@@ -409,6 +409,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
         
         $("#loginButton").on("click", function(event){
             event.preventDefault();
+            //get username and password
             let username = $("#username");
             let password = $("#password");
             
