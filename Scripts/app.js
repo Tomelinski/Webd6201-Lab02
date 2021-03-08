@@ -417,7 +417,7 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
                 // Create the anchor that will exist within the humanResourcesListItem
                 //let usernameData = `<a class="nav-link" aria-current="page" href="#"><i class="fas fa-user-circle fa-lg"></i> ${username.val()}</a>`;
                 let usernameData = `<div class="navbar-text"><i class="fas fa-user-circle fa-lg"></i> ${username.val()}</div>`;
-                let loginAnchorData = `<a class="nav-link" aria-current="page" href="#"><i class="fas fa-sign-out-alt fa-lg"></i> Logout</a>`
+                let loginAnchorData = `<a class="nav-link" aria-current="page" href="./login.html"><i class="fas fa-sign-out-alt fa-lg"></i> Logout</a>`
                 // Set the innerHtml with the data above
                 usernameListItem.innerHTML = usernameData;
 
@@ -441,44 +441,66 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
 
 
     // For validation Methods
+    /**
+     * This Method will validated an Email Address
+     */
     function textEmailAddressValidation()
     {
+      // Get a reference to the ErrorMessage div
       let errorMessage = $("#errorMessage").hide();
   
+      // This is the pattern we will validate against
       let emailAddressPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   
+      // When the email field loses focus...
       $("#emailAddress").on("blur", function(){
   
+        // Check if the email does NOT matches the pattern specified above.
         if (!emailAddressPattern.test($(this).val())) {
-          $(this).trigger("focus").trigger("select");
-
+          // Keep on this field and show an error
+          $(this).trigger("focus").trigger("select"); 
           errorMessage.show().addClass("alert alert-danger").text("Please enter a valid email address");
+        
+          // If it does match the email pattern, hide any errors
         } else {
           errorMessage.removeAttr("class").hide();
         }
       });
     }
 
+    /**
+     * This method is used to validate a Name
+     */
     function textNameValidation()
     {
+      // Get a reference to the error message div
       let errorMessage = $("#errorMessage").hide();
+      // Set the minimum characters for a Name
       let nameMinChars = 2;
 
+      // When the firstName field loses focus
       $("#firstName").on("blur", function(){
+        // Check if the first name has less than the minimum number of characters.
         if ($(this).val().length < nameMinChars) {
+          // Keep on this input, and show an error message
           $(this).trigger("focus").trigger("select");
-
           errorMessage.show().addClass("alert alert-danger").text("Please Enter a valid First Name, must be greater than 2 Characters");
+        
+          // If its within bounds, remove the error message
         } else {
           errorMessage.removeAttr("class").hide();
         }
       });
 
+      // When the lastName field loses focus
       $("#lastName").on("blur", function(){
+        // Check if the last name has less than the minimum number of characters.
         if ($(this).val().length < nameMinChars) {
+          // Keep on this input, and show an error message
           $(this).trigger("focus").trigger("select");
-
           errorMessage.show().addClass("alert alert-danger").text("Please Enter a valid Last Name, must be greater than 2 Characters");
+        
+        // If its within bounds, remove the error message
         } else {
           errorMessage.removeAttr("class").hide();
         }
@@ -487,31 +509,43 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
 
     }
 
+    /**
+     * This method is used to validate a password
+     */
     function textPasswordValidation()
     {
+      // Get a reference to the error message div
       let errorMessage = $("#errorMessage").hide();
+      // Set the minimum characters for a Name
       let passwordMinChars = 6;
 
+      // When the password input loses focus
       $("#password").on("blur", function(){
+        // Check if the password has less than the minimum number of characters.
         if ($(this).val().length < passwordMinChars) {
+          // Keep on this input, and show an error message
           $(this).trigger("focus").trigger("select");
-
           errorMessage.show().addClass("alert alert-danger").text("Please enter a valid Password. Must be Greater than 6 Characters.");
         
+          // Or, if the confirmPassword input is NOT empty, and doesnt match the password input
         } else if ($("#confirmPassword").val() !== "" && $(this).val() !== $("#passwordConfirm").val()) {
+          // Show an error message
           errorMessage.show().addClass("alert alert-danger").text("Confirm Password doesnt match password.");
         
+          // Otherwise hide any error messages
         } else {
           errorMessage.removeAttr("class").hide();
         }
       });
 
-
+      // When the confirmPassword input loses focus
       $("#confirmPassword").on("blur", function(){
+        // Check to see if the password string matches this one
         if ($(this).val() !== $("#password").val()) {
-          //$(this).trigger("focus").trigger("select");
-
+          // Show an Error Message
           errorMessage.show().addClass("alert alert-danger").text("Confirm Password doesnt match password.");
+          
+        // Otherwise hide any error messages  
         } else {
           errorMessage.removeAttr("class").hide();
         }
@@ -519,6 +553,10 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
 
     }
 
+    /**
+     * A simple function that calls each validation method for the
+     * registration form
+     */
     function formValidator()
     {
       textEmailAddressValidation();
@@ -541,15 +579,19 @@ If you want to look at some of my Projects feel free to look at my GitHub<a clas
       //insert error message before the 2nd node - the form
       registerForm.insertBefore(errorMessage, registerForm.childNodes[2]);
 
+      // Validate the form
       formValidator();
 
+      // When the register button is clicked
       $("#registerButton").on("click", function(event){
+        // Prevent defaut behaviour
         event.preventDefault();
 
+        // Create the user with the form data & log it in console
         let newUser = new User($("#firstName").val(), $("#lastName").val(), $("#firstName").val() + " " + $("#lastName").val(), $("#emailAddress").val(), $("#password").val());
-
         console.log(newUser.toString());
 
+        // Reset the form
         registerForm.reset();
 
       });
